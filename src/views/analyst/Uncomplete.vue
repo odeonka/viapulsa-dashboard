@@ -65,6 +65,7 @@
                 <img v-if="trx.provider == 'indosat'" src="@/assets/img/provider/indosat-logo.png" alt="">
                 <img v-if="trx.provider == 'telkomsel'" src="@/assets/img/provider/telkomsel-logo.png" alt="">
                 <img v-if="trx.provider == 'three'" src="@/assets/img/provider/three-logo.png" alt="">
+                <img v-if="trx.provider == 'smartfren'" src="@/assets/img/provider/smartfren-logo.png" alt="">
                 <img v-if="trx.provider == 'xlaxis'" src="@/assets/img/provider/xlaxis-logo.png" alt="">
               </td>
               <td>

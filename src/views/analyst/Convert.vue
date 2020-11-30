@@ -74,7 +74,7 @@
             />
              <img
               v-if="trx.provider == 'smartfren'"
-              src="@/assets/img/provider/smartfrem-logo.png"
+              src="@/assets/img/provider/smartfren-logo.png"
               width="40px"
               alt=""
             />
@@ -327,6 +327,11 @@
                   <img
                     v-if="activetrx.provider == 'three'"
                     src="@/assets/img/provider/three-logo.png"
+                    alt=""
+                  />
+                  <img
+                    v-if="activetrx.provider == 'smartfren'"
+                    src="@/assets/img/provider/smartfren-logo.png"
                     alt=""
                   />
                   <img

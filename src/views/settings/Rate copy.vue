@@ -140,6 +140,39 @@
                     </tbody>
                 </table>
               </b-tab>
+              <b-tab title="Smartfren">
+                <table class="table table-responsive-sm table-hover table-outline mb-0">
+                  <thead class="thead-light">
+                    <tr>
+                        <th class="text-center"><i class="icon-globe"></i></th>
+                        <th>Minimal</th>
+                        <th>Maksimal</th>
+                        <th>Rate</th>
+                        <th>Action</th>
+                    </tr>
+                  </thead>
+                    <tbody>
+                      <tr v-for="(rate, index) in ratesmartfren" :key='index'>
+                          <td class="text-center align-middle"><div class="avatar">
+                              <img class="img-avatar" src="@/assets/img/provider/smartfren-logo.png" width="60px">
+                          </div></td>
+                          <td class="align-middle">
+                              Rp. {{formatNominal(rate.min)}}
+                          </td>
+                          <td class="align-middle">
+                              Rp. {{formatNominal(rate.max)}}
+                          </td>
+                          <td class="align-middle">
+                              {{rate.rate}}
+                          </td>
+                          <td class="align-middle">
+                            <button class="btn btn-primary mr-2" type="button" @click="editRate(rate)"><i class="fa fa-edit"></i> Edit</button>
+                            <button class="btn btn-outline-danger" type="button" @click="hapusRate(rate)"><i class="fa fa-window-close"></i> Hapus</button>
+                          </td>
+                      </tr>
+                    </tbody>
+                </table>
+              </b-tab>
               <b-tab title="VIP">
                 <table class="table table-responsive-sm table-hover table-outline mb-0">
                   <thead class="thead-light">
@@ -185,7 +218,7 @@
                     <option value="xlaxis">XL/AXIS</option>
                     <option value="indosat">Indonsat</option>
                     <option value="three">Three</option>
-                  </select><br>
+                    <option value="smartfren">Smartfren</option> 
                   <input class="form-control form-control" type="number" name="min" v-model="addMin" placeholder="minimal (eg. 25000)"><br>
                   <input class="form-control form-control" type="number" name="max" v-model="addMax" placeholder="maksimal (eg. 99999)"><br>
                   <input class="form-control form-control" type="number" name="rate" v-model="addcRate" placeholder="rate (eg. 0.8)"><br>
@@ -415,6 +448,11 @@ export default {
     ratethree: function() {
       return this.rates.filter(function(rate){
         return rate.provider == 'three'
+      })
+    },
+    ratesmartfren: function() {
+      return this.rates.filter(function(rate){
+        return rate.provider == 'smartfren'
       })
     },
     ratevip: function() {

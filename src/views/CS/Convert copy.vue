@@ -22,6 +22,7 @@
             <img v-if="trx.provider == 'indosat'" src="@/assets/img/provider/indosat-logo.png" width="40px" alt="">
             <img v-else-if="trx.provider == 'telkomsel'" src="@/assets/img/provider/telkomsel-logo.png" width="40px" alt="">
             <img v-else-if="trx.provider == 'three'" src="@/assets/img/provider/three-logo.png" width="40px" alt="">
+            <img v-else-if="trx.provider == 'smartfren'" src="@/assets/img/provider/smartfren-logo.png" width="40px" alt="">
             <img v-else-if="trx.provider == 'xlaxis'" src="@/assets/img/provider/xlaxis-logo.png" width="40px" alt="">
             <img v-else-if="trx.provider == 'telkomselvip'" src="@/assets/img/provider/telkomselvip-logo.png" width="40px" alt="">
             <img v-else-if="trx.provider == 'xlaxisvip'" src="@/assets/img/provider/xlaxis-logo.png" width="40px" alt="">
@@ -47,6 +48,7 @@
             <img v-if="trx.provider == 'indosat'" src="@/assets/img/provider/indosat-logo.png" width="40px" alt="">
             <img v-else-if="trx.provider == 'telkomsel'" src="@/assets/img/provider/telkomsel-logo.png" width="40px" alt="">
             <img v-else-if="trx.provider == 'three'" src="@/assets/img/provider/three-logo.png" width="40px" alt="">
+            <img v-else-if="trx.provider == 'smartfren'" src="@/assets/img/provider/smartfren-logo.png" width="40px" alt="">
             <img v-else-if="trx.provider == 'xlaxis'" src="@/assets/img/provider/xlaxis-logo.png" width="40px" alt="">
             <img v-else-if="trx.provider == 'telkomselvip'" src="@/assets/img/provider/telkomselvip-logo.png" width="40px" alt="">
             <img v-else-if="trx.provider == 'xlaxisvip'" src="@/assets/img/provider/xlaxis-logo.png" width="40px" alt="">
@@ -66,6 +68,7 @@
             <img v-if="trx.provider == 'indosat'" src="@/assets/img/provider/indosat-logo.png" width="40px" alt="">
             <img v-else-if="trx.provider == 'telkomsel'" src="@/assets/img/provider/telkomsel-logo.png" width="40px" alt="">
             <img v-else-if="trx.provider == 'three'" src="@/assets/img/provider/three-logo.png" width="40px" alt="">
+            <img v-else-if="trx.provider == 'smartfren'" src="@/assets/img/provider/smartfren-logo.png" width="40px" alt="">
             <img v-else-if="trx.provider == 'xlaxis'" src="@/assets/img/provider/xlaxis-logo.png" width="40px" alt="">
             <img v-else-if="trx.provider == 'telkomselvip'" src="@/assets/img/provider/telkomselvip-logo.png" width="40px" alt="">
             <img v-else-if="trx.provider == 'xlaxisvip'" src="@/assets/img/provider/xlaxis-logo.png" width="40px" alt="">
@@ -134,6 +137,7 @@
                   <img v-if="activetrx.provider == 'indosat'" src="@/assets/img/provider/indosat-logo.png" alt="">
                   <img v-if="activetrx.provider == 'telkomsel'" src="@/assets/img/provider/telkomsel-logo.png" alt="">
                   <img v-if="activetrx.provider == 'three'" src="@/assets/img/provider/three-logo.png" alt="">
+                  <img v-if="activetrx.provider == 'smartfren'" src="@/assets/img/provider/smartfren-logo.png" alt="">
                   <img v-if="activetrx.provider == 'xlaxis'" src="@/assets/img/provider/xlaxis-logo.png" alt="">
                   <img v-if="activetrx.provider == 'telkomselvip'" src="@/assets/img/provider/telkomsel-logo.png" alt="">
                   <img v-if="activetrx.provider == 'xlaxisvip'" src="@/assets/img/provider/xlaxis-logo.png" alt="">

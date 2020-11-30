@@ -121,6 +121,8 @@ export default {
       indosat: { status: false },
       xlaxis: { status: false },
       three: { status: false },
+      smartfren: { status: false },
+
 
       //bank
       bri: { status: false },
@@ -302,6 +304,11 @@ export default {
         .doc("providers")
         .collection("providers")
         .doc("three"),
+      smartfren: db
+        .collection("settings")
+        .doc("providers")
+        .collection("providers")
+        .doc("smartfren"),
       xlaxis: db
         .collection("settings")
         .doc("providers")

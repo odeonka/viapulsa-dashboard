@@ -1,0 +1,12 @@
+body {
+    margin:0!important;
+}
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap');
+
+div, input {
+    font-family: 'Poppins', sans-serif;
+}
+@import 'CS/panelcs';
+@import 'CS/login';

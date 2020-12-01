@@ -86,6 +86,7 @@
                   type="button"
                   :href="theData.bukti_client_0"
                   class="btn btn-success"
+                  v-show="search_id"
                   >1</a
                 >
                 <a
@@ -175,11 +176,13 @@
               <td>Bukti CS</td>
               <!-- <td>{{ theData.bukti_server }}
               </td> -->
-              <td> <a
+              <td>
+               <a
                   target="_blank"
                   type="button"
                   :href="theData.bukti_server"
                   class="btn btn-success"
+                   v-show="search_id"
                   >A</a
                 ></td>
               </tr>
@@ -447,6 +450,6 @@ export default {
   position: relative;
   margin: auto;
   width: 500px;
-  height: 300px;
+  height: 500px;
 }
 </style>

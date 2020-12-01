@@ -60,7 +60,7 @@ const routes = [
     }
   },
   {
-    path: '/analyst-pencaridata',
+    path: '/analyst/pencariandataa',
     name: 'pencariandataa',
     component: pencariandataa,
     meta: {

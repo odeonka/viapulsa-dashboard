@@ -90,7 +90,7 @@
                 ><font-awesome-icon icon="cog" class="mr-3" />Pengaturan</span
               >
             </div>
-            <div
+          <!--  <div
               style="cursor: pointer"
               role="menuitem"
               @click="
@@ -102,7 +102,7 @@
               <span
                 ><font-awesome-icon icon="search" class="mr-3" />Pencarian</span
               >
-            </div>
+            </div>-->
             <div
               class="dropdown-item py-2 pr-5"
             >

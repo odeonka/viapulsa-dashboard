@@ -237,7 +237,14 @@
                 ><font-awesome-icon icon="cog" class="mr-3" />Pengaturan</span
               >
             </div>
-            <div
+            <div>
+            <span
+                ><font-awesome-icon icon="search" class="mr-3" />
+            <router-link target="_blank" a href="analyst/pencariandataa" to="/analyst/pencariandataa">Pencarian</router-link>
+            </span>
+            </div>
+            <!-- Pencarian Data di Analysis-->
+          <!--  <div
               style="cursor: pointer"
               role="menuitem"
               @click="
@@ -249,13 +256,8 @@
               <span
                 ><font-awesome-icon icon="search" class="mr-3" />Pencarian</span
               >
-            </div>
-             <div>
-            <span
-                ><font-awesome-icon icon="search" class="mr-3" />
-            <router-link target="_blank" a href="analyst/pencariandataa" to="/analyst/pencariandataa">Pencarian</router-link>
-            </span>
-            </div>
+            </div> -->
+             <!-- Pencarian Data di Analysis-->
             <div
               style="cursor: pointer"
               role="menuitem"
@@ -882,6 +884,7 @@
       </div>
     </transition>
     <transition name="fade">
+    
       <div
         v-if="popMenu"
         @click="popMenu = false"
@@ -889,16 +892,30 @@
         class="min-vw-100 min-vh-100 position-fixed"
         style="top: 0; left: 0; background: rgba(0, 0, 0, 0.7); z-index: 999"
       ></div>
+      
     </transition>
+   
+
     <transition name="fade">
       <rate v-if="settings.rate" />
     </transition>
     <transition name="fade">
       <generalsettings v-if="settings.general" />
     </transition>
+
+    <!-- Hapus 
     <transition name="fade">
       <datapencarian v-if="settings.pencariandataa" />
+    </transition> -->
+
+     <transition name="fade">
+      <!-- Tombol Keluar -->
+      <div class="position-fixed" style="top:36px;right:calc(12.5vw - 24px);cursor:pointer;z-index:999999" @click="settings.rate = false; settings.general = false;" v-if="settings.rate ||  settings.general">
+           <span class="badge badge-danger p-3" style="border-radius: 50px; line-height: 6px">x</span>
+        <!-- Tombol Keluar -->
+      </div>
     </transition>
+
     <transition name="fade">
       <div
         class="position-fixed"
@@ -911,20 +928,12 @@
         @click="
           settings.rate = false;
           settings.general = false;
-          settings.pencariandataa = false;
+          //settings.pencariandataa = false;
         "
-        v-if="settings.rate || settings.general || settings.pencariandataa"
+        v-if="settings.rate || settings.general"
       >
       </div>
     </transition>
-    <transition name="fade">
-      <!-- Tombol Keluar -->
-      <div class="position-fixed" style="top:36px;right:calc(12.5vw - 24px);cursor:pointer;z-index:999999" @click="settings.rate = false; settings.pencariandataa = false; settings.general = false;" v-if="settings.rate || settings.pencariandataa || settings.general">
-           <span class="badge badge-danger p-3" style="border-radius: 50px; line-height: 6px">x</span>
-        <!-- Tombol Keluar -->
-      </div>
-    </transition>
-
     <div>
       <input type="text" id="rekeningcopy" v-model="activetrx.norek" />
       <input type="text" id="idcopy" v-model="activetrx.trx_id" />
@@ -943,8 +952,7 @@ let $ = JQuery;
 import FileSelect from "../../elements/FileSelect";
 import rate from "../settings/Rate";
 import generalsettings from "../settings/General";
-//import datapencarian from "../settings/PencarianDataA";
-import datapencarian from "../analyst/pencariandataa";
+import datapencarian from "../analyst/PencarianDataA";
 const uuidv1 = require("uuid/v1");
 
 export default {

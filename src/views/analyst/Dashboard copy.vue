@@ -90,7 +90,19 @@
                 ><font-awesome-icon icon="cog" class="mr-3" />Pengaturan</span
               >
             </div>
-            <div
+             <div
+              class="dropdown-item py-2 pr-5"
+            >
+            <span
+                ><font-awesome-icon icon="search" class="mr-3" />
+            <router-link target="_blank"  a href="analyst/pencariandataa" to="/analyst/pencariandataa">Pencarian Data</router-link>
+            </span
+              >
+              </div>
+              <div id="app">
+  <button @click="myFunction()">Click Me</button>
+</div>
+            <!--<div
               style="cursor: pointer"
               role="menuitem"
               @click="
@@ -102,16 +114,7 @@
               <span
                 ><font-awesome-icon icon="search" class="mr-3" />Pencarian</span
               >
-            </div>
-            <div
-              class="dropdown-item py-2 pr-5"
-            >
-            <span
-                ><font-awesome-icon icon="search" class="mr-3" />
-            <router-link target="_blank"  a href="analyst/pencariandataa" to="/analyst/pencariandataa">Pencarian Data</router-link>
-            </span
-              >
-              </div>
+            </div>-->
             <div
               style="cursor: pointer"
               role="menuitem"
@@ -371,8 +374,7 @@
           top: 36px;
           right: calc(12.5vw - 16px);
           cursor: pointer;
-          z-index: 999999;
-        "
+          z-index: 999999;"
         @click="
           settings.rate = false;
           settings.general = false;
@@ -443,8 +445,7 @@ import firebase from "firebase";
 import moment from "moment";
 import rate from "../settings/Rate";
 import generalsettings from "../settings/General";
-//import datapencarian from "../settings/PencarianDataA";
-import datapencarian from "../analyst/pencariandataa";
+import datapencarian from "../analyst/PencarianDataA";
 import Datepicker from "vuejs-datepicker";
 
 export default {
@@ -464,6 +465,7 @@ export default {
         general: false,
         rate: false,
       },
+      myModel:false,
       csready: false,
       popMenu: false,
       transaksi: [],
@@ -475,6 +477,9 @@ export default {
     this.userEmail = firebase.auth().currentUser.email;
   },
   methods: {
+     myFunction: function () {   
+          window.open("analyst/datapencariana.vue", "_blank");    
+      },
     formatNominal(value) {
       let val = (value / 1).toFixed(0).replace(".", ",");
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");

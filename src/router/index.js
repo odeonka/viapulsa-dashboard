@@ -6,6 +6,7 @@ import Login from '@/views/Login';
 import ConvertPulsa from '@/views/CS/Convert'
 import Dashboard from '@/views/master/Dashboard'
 import Analyst from '@/views/analyst/Dashboard'
+import pencariandataa from '@/views/analyst/pencariandataa'
 import BadData from '@/views/baddata'
 import AnalystOngoing from '@/views/analyst/Uncomplete'
 import Seller from '@/views/seller/Seller'
@@ -54,6 +55,14 @@ const routes = [
     path: '/selling-pulsa',
     name: 'dashboardseller',
     component: Seller,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/analyst-pencaridata',
+    name: 'pencariandataa',
+    component: pencariandataa,
     meta: {
       requiresAuth: true
     }
@@ -118,6 +127,8 @@ router.beforeEach((to, from, next) => {
         next('dashboard')
       } else if(type == 'analyst'){
         next('analyst')
+      }else if(type == 'analyst'){
+        next('pencariandataa')
       }
       else next();
     })

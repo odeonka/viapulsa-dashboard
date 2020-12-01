@@ -160,11 +160,6 @@ export default {
                 label: 'Three',
                 borderColor: '#383838',
                 data: [snap.data.three.kemarin6, snap.data.three.kemarin5, snap.data.three.kemarin4, snap.data.three.kemarin3, snap.data.three.kemarin2, snap.data.three.kemarin, snap.data.three.hariini]
-              },
-              {
-                label: 'Smartfren',
-                borderColor: '#383838',
-                data: [snap.data.smartfren.kemarin6, snap.data.smartfren.kemarin5, snap.data.smartfren.kemarin4, snap.data.smartfren.kemarin3, snap.data.smartfren.kemarin2, snap.data.smartfren.kemarin, snap.data.smartfren.hariini]
               }
             ],
           },

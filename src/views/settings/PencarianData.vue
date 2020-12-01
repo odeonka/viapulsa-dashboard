@@ -9,7 +9,26 @@
         content-class="mt-3"
         fill
       >
+      <!-- style="width: calc(100% - 80px); margin-right: 12px"
+              maxlength="50"
+              dibawah v-model
+              -->
         <b-tab title="Pencarian ID" active>
+            <center>
+            <input
+              v-model="search_id"
+              size="30"
+              placeholder="Masukkan ID yang ingin di Cari..."
+            />
+            <button
+              class="btn btn-primary"
+              style="font-size: 12px"
+              @click="searchFunction()"
+            >
+              <font-awesome-icon icon="search" class="mr-3" />
+              Cari
+            </button>
+            </center>
           <table
             class="table table-responsive-sm table-hover table-outline mb-0"
           >
@@ -32,20 +51,7 @@
                     <div id="searchIcon"><font-awesome-icon icon="search" :style="{color: 'rgba(0,0,0,0.2)'}" /></div>
                   </div>
                   v-model tadinya search_id/searchfunction menjadi theData-->
-                  <input
-                    v-model="search_id"
-                    style="width: calc(100% - 80px); margin-right: 12px"
-                    maxlength="50"
-                    placeholder="Masukkan ID yang ingin di Cari..."
-                  />
-                  <button
-                    class="btn btn-primary"
-                    style="font-size: 12px"
-                    @click="searchFunction()"
-                  >
-                    <font-awesome-icon icon="search" class="mr-3" />
-                    Cari
-                  </button>
+                  
                 </td>
               </tr>
               <!-- bila ingin menambah data sesuai dengan firebase dan import return theData -->
@@ -121,8 +127,6 @@ export default {
       indosat: { status: false },
       xlaxis: { status: false },
       three: { status: false },
-      smartfren: { status: false },
-
 
       //bank
       bri: { status: false },
@@ -304,11 +308,6 @@ export default {
         .doc("providers")
         .collection("providers")
         .doc("three"),
-      smartfren: db
-        .collection("settings")
-        .doc("providers")
-        .collection("providers")
-        .doc("smartfren"),
       xlaxis: db
         .collection("settings")
         .doc("providers")

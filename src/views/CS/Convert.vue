@@ -583,7 +583,9 @@
 
     <transition name="fade">
       <div class="position-fixed" style="top:36px;right:calc(12.5vw - 24px);cursor:pointer;z-index:999999" @click="settings.rate = false; settings.pencariandata = false; settings.general = false;" v-if="settings.rate || settings.pencariandata || settings.general">
+        <!-- Tombol Keluar -->
         <span class="badge badge-danger p-3" style="border-radius:50px;line-height:6px;">x</span>
+        <!-- Tombol Keluar -->
       </div>
     </transition>
 

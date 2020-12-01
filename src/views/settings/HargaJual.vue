@@ -124,35 +124,6 @@
                     </tbody>
                 </table>
               </b-tab>
-              <b-tab title="Smartfren">
-                <table class="table table-responsive-sm table-hover table-outline mb-0">
-                  <thead class="thead-light">
-                    <tr>
-                        <th class="text-center"><i class="icon-globe"></i></th>
-                        <th>Nominal</th>
-                        <th>Harga</th>
-                        <th>Action</th>
-                    </tr>
-                  </thead>
-                    <tbody>
-                      <tr v-for="(harga, index) in hargasmartfren" :key='index'>
-                          <td class="text-center align-middle"><div class="avatar">
-                              <img class="img-avatar" src="@/assets/img/provider/smartfren-logo.png" width="60px">
-                          </div></td>
-                          <td class="align-middle">
-                              {{formatNominal(harga.nominal)}}K
-                          </td>
-                          <td class="align-middle">
-                              Rp. {{formatNominal(harga.harga)}}
-                          </td>
-                          <td class="align-middle">
-                            <button class="btn btn-primary mr-2" type="button" @click="editRate(harga)"><i class="fa fa-edit"></i> Edit</button>
-                            <button class="btn btn-outline-danger" type="button" @click="hapusRate(harga)"><i class="fa fa-window-close"></i> Hapus</button>
-                          </td>
-                      </tr>
-                    </tbody>
-                </table>
-              </b-tab>
               <b-tab title="Axis">
                 <table class="table table-responsive-sm table-hover table-outline mb-0">
                   <thead class="thead-light">
@@ -193,8 +164,6 @@
                     <option value="xlaxis">XL/AXIS</option>
                     <option value="indosat">Indonsat</option>
                     <option value="three">Three</option>
-                    <option value="smartfren">Smartfren</option>
-
                   </select><br>
                   <input class="form-control form-control" type="number" name="min" v-model="addMin" placeholder="minimal (eg. 25000)"><br>
                   <input class="form-control form-control" type="number" name="max" v-model="addMax" placeholder="maksimal (eg. 99999)"><br>
@@ -430,11 +399,6 @@ export default {
     hargathree: function() {
       return this.hargas.filter(function(hrg){
         return hrg.provider == 'three'
-      })
-    },
-    hargasmartfren: function() {
-      return this.hargas.filter(function(hrg){
-        return hrg.provider == 'smartfren'
       })
     },
   },

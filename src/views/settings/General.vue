@@ -174,29 +174,6 @@
                     <tr>
                       <td class="align-middle">
                         <img
-                          src="@/assets/img/provider/smartfren-logo.png"
-                          width="35px"
-                          alt=""
-                        />
-                      </td>
-                      <td class="align-middle font-weight-bold">Smartfren</td>
-                      <td class="align-middle">
-                        <label class="switch mb-0">
-                          <input
-                            id="switchstatus"
-                            type="checkbox"
-                            v-model="smartfren.status"
-                            @change="
-                              turnOff('providers', 'smartfren', smartfren.status)
-                            "
-                          />
-                          <span class="slider round"></span>
-                        </label>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="align-middle">
-                        <img
                           src="@/assets/img/provider/xlaxis-logo.png"
                           width="35px"
                           alt=""
@@ -211,6 +188,33 @@
                             v-model="xlaxis.status"
                             @change="
                               turnOff('providers', 'xlaxis', xlaxis.status)
+                            "
+                          />
+                          <span class="slider round"></span>
+                        </label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="align-middle">
+                        <img
+                          src="@/assets/img/provider/smartfren-logo.png"
+                          width="35px"
+                          alt=""
+                        />
+                      </td>
+                      <td class="align-middle font-weight-bold">Smartfren</td>
+                      <td class="align-middle">
+                        <label class="switch mb-0">
+                          <input
+                            id="switchstatus"
+                            type="checkbox"
+                            v-model="smartfren.status"
+                            @change="
+                              turnOff(
+                                'providers',
+                                'smartfren',
+                                smartfren.status
+                              )
                             "
                           />
                           <span class="slider round"></span>

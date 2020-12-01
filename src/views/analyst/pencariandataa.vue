@@ -286,12 +286,9 @@ export default {
         .where("trx_id", "==", this.search_id)
         .get()
         .then((data) => {
-          // const  = data.docs.map((doc) => doc.data(data.title, data.pesan));
           data.docs.forEach((element) => {
             console.log(element);
             this.theData = element.data();
-            // element.data.title;
-            // element.data.pesan;
           });
         });
     },
@@ -378,46 +375,6 @@ export default {
         });
     },
   },
-  //search id
-  // computed: {
-  //   ongoingTrxs: function () {
-  //     return this.transaksi.filter((trx) => {
-  //       if (trx.norek != null) {
-  //         return (
-  //           (trx.indexStatus != 4 &&
-  //             trx.trx_id.toLowerCase().includes(this.search_id.toLowerCase()) &&
-  //             trx.cancel != true) ||
-  //           (trx.indexStatus != 4 &&
-  //             trx.atasnama
-  //               .toLowerCase()
-  //               .includes(this.search_id.toLowerCase()) &&
-  //             trx.cancel != true) ||
-  //           (trx.indexStatus != 4 &&
-  //             trx.norek.includes(this.search_id) &&
-  //             trx.cancel != true) ||
-  //           (trx.indexStatus != 4 &&
-  //             trx.nomor.includes(this.search_id) &&
-  //             trx.cancel != true)
-  //         );
-  //       } else {
-  //         return (
-  //           (trx.indexStatus != 4 &&
-  //             trx.trx_id.toLowerCase().includes(this.search_id.toLowerCase()) &&
-  //             trx.cancel != true) ||
-  //           (trx.indexStatus != 4 &&
-  //             trx.atasnama
-  //               .toLowerCase()
-  //               .includes(this.search_id.toLowerCase()) &&
-  //             trx.cancel != true) ||
-  //           (trx.indexStatus != 4 &&
-  //             trx.nomor.includes(this.search_id) &&
-  //             trx.cancel != true)
-  //         );
-  //       }
-  //     });
-  //   },
-  // },
-  //search id
   firestore() {
     return {
       maintenance: db.collection("settings").doc("fgM8BnNndtCmSQsAR7N4"),

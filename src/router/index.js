@@ -7,6 +7,7 @@ import ConvertPulsa from '@/views/CS/Convert'
 import Dashboard from '@/views/master/Dashboard'
 import Analyst from '@/views/analyst/Dashboard'
 import pencariandataa from '@/views/analyst/pencariandataa'
+// import pencariandataao from '@/views/analyst/pencariandataao'
 import BadData from '@/views/baddata'
 import AnalystOngoing from '@/views/analyst/Uncomplete'
 import Seller from '@/views/seller/Seller'
@@ -67,6 +68,14 @@ const routes = [
       requiresAuth: true
     }
   },
+  // {
+  //   path: '/analyst/pencariandataao',
+  //   name: 'pencariandataao',
+  //   component: pencariandataao,
+  //   meta: {
+  //     requiresAuth: true
+  //   }
+  // },
   {
     path: '/analyst',
     name: 'analyst',
@@ -130,6 +139,9 @@ router.beforeEach((to, from, next) => {
       }else if(type == 'analyst'){
         next('pencariandataa')
       }
+      // else if(type == 'analyst'){
+      //   next('pencariandataao')
+      // }
       else next();
     })
   }

@@ -56,25 +56,25 @@
               </tr>
               <!-- bila ingin menambah data sesuai dengan firebase dan import return theData -->
               <tr>
-                <td>Nomor</td>
-                <td>{{ theData.norek }}</td>
+                <td>Nama</td>
+                <td>{{ theData.displayName }}</td>
               </tr>
               <tr>
-                <td>Atas Nama</td>
-                <td>{{ theData.atasnama }}</td>
+                <td>Email</td>
+                <td>{{ theData.email }}</td>
               </tr>
               <tr>
-                <td>Bank</td>
-                <td>{{ theData.bank }}</td>
+                <td>No. HP</td>
+                <td>{{ theData.phoneNumber }}</td>
               </tr>
               <tr>
-                <td>CS</td>
-                <td>{{ theData.cs }}</td>
+                <td>Saldo</td>
+                <td>{{ theData.saldo }}</td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>Provider</td>
                 <td>{{ theData.provider }}</td>
-              </tr>
+              </tr> -->
               <!-- <tr>
                 <td>Waktu Upload</td>
                 <td>
@@ -104,12 +104,11 @@ export default {
         // kalau ingin menambah sesuatu lihat firebase/cloud firestore/trxconvert/
         // pilih kode yang dikehendaki (terserah) dan aplikasikan seperti di bawah ini
         // akhir tidak perlu koma
-        norek: "",
-        atasnama: "",
-        bank: "",
-        cs: "",
-        provider: "",
-        time_client_upload: "",
+        displayName: "",
+        email: "",
+        phoneNumber: "",
+        saldo: "",
+        
       },
       title: null,
       body: null,
@@ -127,6 +126,7 @@ export default {
       indosat: { status: false },
       xlaxis: { status: false },
       three: { status: false },
+      smartfren: { status: false },
 
       //bank
       bri: { status: false },
@@ -157,14 +157,27 @@ export default {
         .where("trx_id", "==", this.search_id)
         .get()
         .then((data) => {
-          // const  = data.docs.map((doc) => doc.data(data.title, data.pesan));
           data.docs.forEach((element) => {
-            console.log(element);
-            this.theData = element.data();
-            // element.data.title;
-            // element.data.pesan;
+            db.collection("users")
+            .doc("uid")
+            .get()
+              console.log(element.data);
+              this.theData = element.data();
           });
         });
+
+        // db.collection("trxconvert")
+        // .where("trx_id", "==", this.search_id)
+        // .get()
+        // .then((data) => {
+        //   // const  = data.docs.map((doc) => doc.data(data.title, data.pesan));
+        //   data.docs.forEach((element) => {
+        //     console.log(element);
+        //     this.theData = element.data();
+        //     // element.data.title;
+        //     // element.data.pesan;
+        //   });
+        // });
     },
     // Methode Pencarian ID
     maintenanceMode(set) {
@@ -249,46 +262,6 @@ export default {
         });
     },
   },
-  //search id
-  // computed: {
-  //   ongoingTrxs: function () {
-  //     return this.transaksi.filter((trx) => {
-  //       if (trx.norek != null) {
-  //         return (
-  //           (trx.indexStatus != 4 &&
-  //             trx.trx_id.toLowerCase().includes(this.search_id.toLowerCase()) &&
-  //             trx.cancel != true) ||
-  //           (trx.indexStatus != 4 &&
-  //             trx.atasnama
-  //               .toLowerCase()
-  //               .includes(this.search_id.toLowerCase()) &&
-  //             trx.cancel != true) ||
-  //           (trx.indexStatus != 4 &&
-  //             trx.norek.includes(this.search_id) &&
-  //             trx.cancel != true) ||
-  //           (trx.indexStatus != 4 &&
-  //             trx.nomor.includes(this.search_id) &&
-  //             trx.cancel != true)
-  //         );
-  //       } else {
-  //         return (
-  //           (trx.indexStatus != 4 &&
-  //             trx.trx_id.toLowerCase().includes(this.search_id.toLowerCase()) &&
-  //             trx.cancel != true) ||
-  //           (trx.indexStatus != 4 &&
-  //             trx.atasnama
-  //               .toLowerCase()
-  //               .includes(this.search_id.toLowerCase()) &&
-  //             trx.cancel != true) ||
-  //           (trx.indexStatus != 4 &&
-  //             trx.nomor.includes(this.search_id) &&
-  //             trx.cancel != true)
-  //         );
-  //       }
-  //     });
-  //   },
-  // },
-  //search id
   firestore() {
     return {
       maintenance: db.collection("settings").doc("fgM8BnNndtCmSQsAR7N4"),

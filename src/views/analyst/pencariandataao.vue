@@ -26,11 +26,8 @@
               </button>
               </center>
         <!-- <div style="border: 1px solid rgb(204, 204, 204); padding: 5px; overflow: auto; width: auto; height: 800px; background-color: rgb(255, 255, 255);"> 
-        
-        
-        style="width: calc(100% - 10px); margin-right: 12px"
+            style="width: calc(100% - 10px); margin-right: 12px"
                     maxlength="50"
-        
         -->
            <vue-custom-scrollbar class="scroll-area"  :settings="settingsa" @ps-scroll-y="scrollHanle">
           <table
@@ -78,7 +75,10 @@
               </tr>
               <tr>
               <td>Bukti Cust</td>
-              <!-- <td>{{ theData.bukti_client_0 }}</td> -->
+              <!-- <td>{{ theData.bukti_client_0 }}</td> 
+              menambahkan v-if="theData.bukti_client_0 != null"
+              menambahkan   v-show="search_id" di setiap bukti client
+              -->
               <td>
               <a
                   target="_blank"
@@ -88,7 +88,7 @@
                   :href="theData.bukti_client_0"
                   class="btn btn-success"
                   v-show="search_id"
-                  >1</a
+                  >0</a
                 >
                 <a
                   target="_blank"
@@ -185,6 +185,9 @@
               <tr>
               <td>Bukti CS</td>
               <!-- <td>{{ theData.bukti_server }}
+                menambahkan  v-if="theData.bukti_server != null" dan
+                v-show="search_id"
+
               </td> -->
               <td>
                <a

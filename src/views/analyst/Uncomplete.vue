@@ -30,6 +30,15 @@
             <div style="cursor:pointer" role="menuitem" @click="settings.general = !settings.general;popMenu = false" class="dropdown-item py-2 pr-5">
               <span><font-awesome-icon icon="cog" class="mr-3" />Pengaturan</span>
             </div>
+            <div
+              class="dropdown-item py-2 pr-5"
+            >
+            <span
+                ><font-awesome-icon icon="search" class="mr-3" />
+            <router-link target="_blank"  a href="analyst/pencariandataa" to="/analyst/pencariandataa">Pencarian Data</router-link>
+            </span
+              >
+              </div>
             <div style="cursor:pointer" role="menuitem" @click="logout()" class="dropdown-item py-2 pr-5">
               <span class="text-danger"><font-awesome-icon icon="sign-out-alt" class="mr-3" />Log Out</span>
             </div>
@@ -109,9 +118,12 @@
     <transition name="fade">
         <generalsettings v-if="settings.general" />
     </transition>
+    <transition name="fade">
+        <datapencarian v-if="settings.pencariandataa" />
+    </transition>
 
     <transition name="fade">
-      <div class="position-absolute" style="top:36px;right:calc(12.5vw - 16px);cursor:pointer;z-index:999999" @click="settings.rate = false; settings.general = false" v-if="settings.rate || settings.general">
+      <div class="position-absolute" style="top:36px;right:calc(12.5vw - 16px);cursor:pointer;z-index:999999" @click="settings.rate = false; settings.general = false; settings.pencariandataa = false;" v-if="settings.rate || settings.general || settings.pencariandataa">
         <span class="badge badge-danger p-3" style="border-radius:50px;line-height:6px;">x</span>
       </div>
     </transition>
@@ -136,6 +148,7 @@ import firebase from 'firebase'
 import moment from 'moment'
 import rate from '../settings/Rate'
 import generalsettings from '../settings/General'
+import datapencarian from '../analyst/pencariandataa'
 import Datepicker from 'vuejs-datepicker'
 
 export default {
@@ -143,6 +156,7 @@ export default {
   components: {
     rate,
     generalsettings,
+    datapencarian,
     Datepicker
   },
   data: () => {

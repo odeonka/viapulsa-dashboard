@@ -237,7 +237,7 @@
                 ><font-awesome-icon icon="cog" class="mr-3" />Pengaturan</span
               >
             </div>
-            <div
+            <!-- <div
               style="cursor: pointer"
               role="menuitem"
               @click="
@@ -249,7 +249,7 @@
               <span
                 ><font-awesome-icon icon="search" class="mr-3" />Pencarian</span
               >
-            </div>
+            </div> -->
              <div>
             <span
                 ><font-awesome-icon icon="search" class="mr-3" />
